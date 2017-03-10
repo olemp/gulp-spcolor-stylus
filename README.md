@@ -1,4 +1,4 @@
-# gulp-spcolor-stylus [![Build status]]
+# gulp-spcolor-stylus
 > Converts SharePoint .spcolor files to .styl variables
 
 ## Usage

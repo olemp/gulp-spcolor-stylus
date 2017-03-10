@@ -1,0 +1,25 @@
+{
+  "name": "gulp-spcolor-stylus",
+  "version": "0.0.1",
+  "description": "Converts SharePoint .spcolor files to .styl variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olemp/gulp-spcolor-stylus.git"
+  },
+  "keywords": [
+    "spcolor",
+    "sharepoint",
+    "composedlook",
+    "stylus"
+  ],
+  "author": "olemp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olemp/gulp-spcolor-stylus/issues"
+  },
+  "homepage": "https://github.com/olemp/gulp-spcolor-stylus#readme"
+}

@@ -11,13 +11,20 @@ module.exports = function (opt) {
   opt = opt || {};
   var doConvert = function (file) {
     var $ = cheerio.load(file.contents);
-    var contents = "";
+    var output = "";
     $("[name]").each(function () {
       var name = $(this).attr("name").toString();
-      var value = $(this).attr("value").toString();
-      contents += format("${0} = #{1}\n", name, value);
+      var hex = $(this).attr("value").toString();
+      var hasAlpha = (hex.length === 8);
+      if (hasAlpha) {
+        var alpha = (parseInt(hex.substr(6, 2), 16) / 255).toFixed(2);
+        hex = hex.substr(0, 6);
+        output += format("${0} = rgba(#{1}, {2})\n", name, hex, alpha);
+      } else {
+        output += format("${0} = #{1}\n", name, hex);
+      }
     });
-    return contents;
+    return output;
   };
   var throughCallback = function (file, enc, cb) {
     if (file.isStream()) {
